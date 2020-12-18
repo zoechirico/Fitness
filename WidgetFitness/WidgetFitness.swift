@@ -11,11 +11,11 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+        SimpleEntry(date: Date(),txt: "Start", configuration: ConfigurationIntent())
     }
     
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+        let entry = SimpleEntry(date: Date(),txt: "Start", configuration: configuration)
         completion(entry)
     }
     
@@ -26,7 +26,7 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let entry = SimpleEntry(date: entryDate,txt: "Start", configuration: configuration)
             entries.append(entry)
         }
         
@@ -37,6 +37,7 @@ struct Provider: IntentTimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+    let txt: String
     let configuration: ConfigurationIntent
 }
 
@@ -75,7 +76,7 @@ struct WidgetFitness: Widget {
 
 struct WidgetFitness_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetFitnessEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        WidgetFitnessEntryView(entry: SimpleEntry(date: Date(),txt: "Start", configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
