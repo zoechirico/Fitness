@@ -23,7 +23,7 @@ func AddEntry(txt: String) {
     
     let r = db.result()
     
-
+    
     for (_ , item) in r.enumerated() {
         print("\(item.t1key),\t \(item.data), \(item.num), \(item.timeEnter)")
     }
@@ -41,7 +41,7 @@ func GetCount() -> Int64 {
     
     let r = db.count()
     
-
+    
     for (_ , item) in r.enumerated() {
         print("\(item)")
         result = item

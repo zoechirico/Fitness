@@ -37,11 +37,13 @@ public class SQLdb {
         if file != "test.sqlite" {
             self.file = file
         }
+        let documentsDirectory = FileManager().containerURL(forSecurityApplicationGroupIdentifier: "group.Fitness.Thingy")
+        let fileURL = documentsDirectory?.appendingPathComponent(self.file ?? file)
         
-        let documents = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        let fileURL = documents.appendingPathComponent(self.file ?? file)
-        
-        if sqlite3_open(fileURL.path, &self.db) != SQLITE_OK {
+        //        let documents = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        //        let fileURL = documents.appendingPathComponent(self.file ?? file)
+        //
+        if sqlite3_open(fileURL?.path, &self.db) != SQLITE_OK {
             print("error opening database")
         }
         
