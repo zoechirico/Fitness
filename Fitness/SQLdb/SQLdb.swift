@@ -149,6 +149,38 @@ public class SQLdb {
     }
     
     
+    public func count() -> [Int64] {
+        var statement: OpaquePointer?
+        
+        var result: [Int64] = []
+        
+        
+        if sqlite3_prepare_v2(db, "select count(*) as c from t0;", -1, &statement, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("error preparing select: \(errmsg)")
+        }
+        
+        
+        while sqlite3_step(statement) == SQLITE_ROW {
+            
+            let queryResultCol0 = sqlite3_column_int64(statement, 0)
+            let t1key = Int64(queryResultCol0)
+            
+            
+            result.append(t1key)
+            
+        }
+        if sqlite3_finalize(statement) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("error finalizing prepared statement: \(errmsg)")
+        }
+        statement = nil
+        return result
+        
+        
+    }
+    
+    
     
     public func result() -> [SQLdbResult]  {
         

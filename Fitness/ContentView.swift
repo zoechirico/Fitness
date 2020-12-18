@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var txt0: String = "Count: \(GetCount())"
+    
+    
     var body: some View {
         ZStack {
             VStack {
                 HStack {
                     VStack{
                         Spacer(minLength: 140)
-                        Text("Events...")
+                        Text(txt0)
                             .padding(.all,30)
                             .padding([.top,.bottom],20)
                             .background(Color.red)
@@ -24,7 +28,9 @@ struct ContentView: View {
                             .font(Font.custom("Avenir-Black", size: 27))
                         Spacer(minLength: 4)
                         Button(action: {
-                            
+                            AddEntry(txt: "Button Pressed")
+                            txt0 = "Count: \(GetCount())"
+
                         }) {
                             Text("Push Ups")
                                 .padding(.all,30)

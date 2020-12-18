@@ -23,6 +23,9 @@
 		B050971C258D32B6000EFD65 /* SQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050971B258D32B6000EFD65 /* SQLdb.swift */; };
 		B0509726258D332D000EFD65 /* SQLdbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0509725258D332D000EFD65 /* SQLdbTests.swift */; };
 		B0509730258D3387000EFD65 /* SQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050971B258D32B6000EFD65 /* SQLdb.swift */; };
+		B050973B258D3B84000EFD65 /* ModelSQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050973A258D3B84000EFD65 /* ModelSQLdb.swift */; };
+		B0509740258D4286000EFD65 /* SQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050971B258D32B6000EFD65 /* SQLdb.swift */; };
+		B0509745258D42DC000EFD65 /* ModelSQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050973A258D3B84000EFD65 /* ModelSQLdb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,7 @@
 		B04C71D5258D2C530077B785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B050971B258D32B6000EFD65 /* SQLdb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLdb.swift; sourceTree = "<group>"; };
 		B0509725258D332D000EFD65 /* SQLdbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLdbTests.swift; sourceTree = "<group>"; };
+		B050973A258D3B84000EFD65 /* ModelSQLdb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLdb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		B04C7196258D2C2B0077B785 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				B0509739258D38E2000EFD65 /* Model SQLdb Fitness */,
 				B050971A258D328B000EFD65 /* SQLdb */,
 				B04C7197258D2C2B0077B785 /* FitnessApp.swift */,
 				B04C7199258D2C2B0077B785 /* ContentView.swift */,
@@ -210,6 +215,14 @@
 				B0509725258D332D000EFD65 /* SQLdbTests.swift */,
 			);
 			path = SQLdb;
+			sourceTree = "<group>";
+		};
+		B0509739258D38E2000EFD65 /* Model SQLdb Fitness */ = {
+			isa = PBXGroup;
+			children = (
+				B050973A258D3B84000EFD65 /* ModelSQLdb.swift */,
+			);
+			path = "Model SQLdb Fitness";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +388,7 @@
 				B050971C258D32B6000EFD65 /* SQLdb.swift in Sources */,
 				B04C719A258D2C2B0077B785 /* ContentView.swift in Sources */,
 				B04C71D7258D2C530077B785 /* WidgetFitness.intentdefinition in Sources */,
+				B050973B258D3B84000EFD65 /* ModelSQLdb.swift in Sources */,
 				B04C7198258D2C2B0077B785 /* FitnessApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +416,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B04C71D1258D2C520077B785 /* WidgetFitness.swift in Sources */,
+				B0509740258D4286000EFD65 /* SQLdb.swift in Sources */,
+				B0509745258D42DC000EFD65 /* ModelSQLdb.swift in Sources */,
 				B04C71D6258D2C530077B785 /* WidgetFitness.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

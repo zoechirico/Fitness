@@ -11,7 +11,7 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(),txt: "Start", configuration: ConfigurationIntent())
+        SimpleEntry(date: Date(),txt: "Count: \(GetCount())", configuration: ConfigurationIntent())
     }
     
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -26,7 +26,7 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate,txt: "Start", configuration: configuration)
+            let entry = SimpleEntry(date: entryDate,txt: "Count: \(GetCount())", configuration: configuration)
             entries.append(entry)
         }
         
@@ -53,7 +53,10 @@ struct WidgetFitnessEntryView : View {
                     Color("C0")
                     
                     HStack {
-                        Text(entry.date, style: .time)
+                        VStack {
+                            Text(entry.date, style: .time)
+                            Text(entry.txt)
+                        }
                     }
                 }
             }
