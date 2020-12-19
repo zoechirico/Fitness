@@ -28,7 +28,7 @@ struct ContentView: View {
                             .font(Font.custom("Avenir-Black", size: 27))
                         Spacer(minLength: 4)
                         Button(action: {
-                            AddEntry(txt: "Button Pressed")
+                            AddEntry(txt: "Push-up")
                             txt0 = "Count: \(GetCount())"
 
                         }) {

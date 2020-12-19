@@ -20,7 +20,7 @@ class SQLdbTests: XCTestCase {
     func testSQLdb() throws {
         
         let db = SQLdb()
-        db.open()
+        db.open("test.sqlite")
         db.create()
         
         guard let  image = db.img(color: UIColor.green,size: CGSize(width: 20,height: 20)) else {
@@ -36,6 +36,39 @@ class SQLdbTests: XCTestCase {
         XCTAssertTrue(r.count >= 1)
         for (_ , item) in r.enumerated() {
             print("\(item.t1key),\t \(item.data), \(item.num), \(item.timeEnter)")
+        }
+        
+        db.close()
+        
+    }
+    
+    func testSQLdb_SQL_ResultNI() throws {
+        
+        let db = SQLdb()
+        db.open("test.sqlite")
+        
+        db.sql(sql: "drop TABLE IF EXISTS t2;")
+        db.sql(sql: "drop TRIGGER IF EXISTS insert_t2_timeEnter;")
+        
+        
+        let sql = """
+        CREATE TABLE IF NOT EXISTS t2 (t1key INTEGER
+                  PRIMARY KEY,data text,num double,timeEnter DATE);
+        CREATE TRIGGER IF NOT EXISTS insert_t2_timeEnter AFTER  INSERT ON t2
+          BEGIN
+            UPDATE t2 SET timeEnter = DATETIME('NOW')  WHERE rowid = new.rowid;
+          END;
+        """
+        db.sql(sql: sql)
+        
+        db.sql(sql: "insert into t2 (data,num) values ('data',0.2);")
+        
+        
+        let r = db.resultNI(sql: "select t1key,data,num,timeEnter from t2;")
+        
+        XCTAssertTrue(r.count >= 1)
+        for (_ , item) in r.enumerated() {
+            print("\(item.t1key),\t \(item.data), \(item.num),  timeEnter: \(item.timeEnter)")
         }
         
         db.close()

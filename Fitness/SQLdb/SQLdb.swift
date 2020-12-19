@@ -18,6 +18,15 @@ public struct SQLdbResult {
     var timeEnter: String
 }
 
+public struct SQLdbResultNI {
+    var t1key: Int64
+    var data: String
+    var num: Double
+    var timeEnter: String
+}
+
+
+
 
 public class SQLdb {
     
@@ -113,6 +122,10 @@ public class SQLdb {
     }
     
     
+    
+    public func sql(sql: String){
+        self.execute(sql: sql)
+    }
     
     
     public func insert(data: String, image: Data, num: Double){
@@ -236,5 +249,54 @@ public class SQLdb {
         statement = nil
         return results
     }
+    
+    
+    public func resultNI(sql: String) -> [SQLdbResultNI]  {
+        
+        var statement: OpaquePointer?
+        
+        var results: [SQLdbResultNI] = []
+        
+        
+        if sqlite3_prepare_v2(db, sql, -1, &statement, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("error preparing select: \(errmsg)")
+        }
+        
+        
+        while sqlite3_step(statement) == SQLITE_ROW {
+            
+            
+            let queryResultCol0 = sqlite3_column_int64(statement, 0)
+            let t1key = Int64(queryResultCol0)
+            
+            
+            guard let queryResultCol1 = sqlite3_column_text(statement, 1) else {
+                print("Query result is nil")
+                return results
+            }
+            let data = String(cString: queryResultCol1)
+            
+            
+            let num = sqlite3_column_double(statement, 2)
+            
+            guard let queryResultTimeEnter = sqlite3_column_text(statement, 3) else {
+                print("Query result is nil")
+                return results
+            }
+            let timeEnter = String(cString: queryResultTimeEnter)
+            
+            results.append(SQLdbResultNI(t1key: t1key, data: data, num: num,timeEnter: timeEnter))
+            
+        }
+        if sqlite3_finalize(statement) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("error finalizing prepared statement: \(errmsg)")
+        }
+        statement = nil
+        return results
+    }
+    
+    
     
 }
