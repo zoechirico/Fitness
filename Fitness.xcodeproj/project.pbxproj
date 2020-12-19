@@ -20,6 +20,8 @@
 		B04C71D6258D2C530077B785 /* WidgetFitness.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B04C71D2258D2C520077B785 /* WidgetFitness.intentdefinition */; };
 		B04C71D7258D2C530077B785 /* WidgetFitness.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B04C71D2258D2C520077B785 /* WidgetFitness.intentdefinition */; };
 		B04C71DA258D2C530077B785 /* WidgetFitnessExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B04C71C9258D2C520077B785 /* WidgetFitnessExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B04FE84C258E45B400B3C802 /* ModelSQLdbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FE84B258E45B400B3C802 /* ModelSQLdbTests.swift */; };
+		B04FE85A258E45F700B3C802 /* ModelSQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050973A258D3B84000EFD65 /* ModelSQLdb.swift */; };
 		B050971C258D32B6000EFD65 /* SQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050971B258D32B6000EFD65 /* SQLdb.swift */; };
 		B0509726258D332D000EFD65 /* SQLdbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0509725258D332D000EFD65 /* SQLdbTests.swift */; };
 		B0509730258D3387000EFD65 /* SQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050971B258D32B6000EFD65 /* SQLdb.swift */; };
@@ -86,6 +88,7 @@
 		B04C71D2258D2C520077B785 /* WidgetFitness.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = WidgetFitness.intentdefinition; sourceTree = "<group>"; };
 		B04C71D3258D2C530077B785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B04C71D5258D2C530077B785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B04FE84B258E45B400B3C802 /* ModelSQLdbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLdbTests.swift; sourceTree = "<group>"; };
 		B050971B258D32B6000EFD65 /* SQLdb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLdb.swift; sourceTree = "<group>"; };
 		B0509725258D332D000EFD65 /* SQLdbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLdbTests.swift; sourceTree = "<group>"; };
 		B050973A258D3B84000EFD65 /* ModelSQLdb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLdb.swift; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				B050973A258D3B84000EFD65 /* ModelSQLdb.swift */,
+				B04FE84B258E45B400B3C802 /* ModelSQLdbTests.swift */,
 			);
 			path = "Model SQLdb Fitness";
 			sourceTree = "<group>";
@@ -403,6 +407,8 @@
 			files = (
 				B0509726258D332D000EFD65 /* SQLdbTests.swift in Sources */,
 				B0509730258D3387000EFD65 /* SQLdb.swift in Sources */,
+				B04FE84C258E45B400B3C802 /* ModelSQLdbTests.swift in Sources */,
+				B04FE85A258E45F700B3C802 /* ModelSQLdb.swift in Sources */,
 				B04C71AA258D2C2B0077B785 /* FitnessTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

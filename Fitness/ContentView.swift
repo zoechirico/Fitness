@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var txt0: String = "Count: \(GetCount())"
+    @State var txt0: String = "Push Ups: \(GetCount())"
+    @State var txt1: String = "Count: \(GetCount())"
     
     
     var body: some View {
@@ -29,13 +30,29 @@ struct ContentView: View {
                         Spacer(minLength: 4)
                         Button(action: {
                             AddEntry(txt: "Push-up")
-                            txt0 = "Count: \(GetCount())"
+                            txt0 = "Push Ups: \(GetCount())"
 
                         }) {
                             Text("Push Ups")
                                 .padding(.all,30)
                                 .padding([.top,.bottom],20)
                                 .background(Color.orange)
+                                .foregroundColor(Color.black)
+                                .cornerRadius(55)
+                                .shadow(radius: 155)
+                                .font(Font.custom("Avenir-Black", size: 57))
+                            
+                        }
+                        
+                        Button(action: {
+                            AddSitup()
+                            txt1 = "Situp: \(GetCount())"
+
+                        }) {
+                            Text("Situp")
+                                .padding(.all,30)
+                                .padding([.top,.bottom],20)
+                                .background(Color.blue)
                                 .foregroundColor(Color.black)
                                 .cornerRadius(55)
                                 .shadow(radius: 155)

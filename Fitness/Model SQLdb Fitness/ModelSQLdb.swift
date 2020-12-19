@@ -9,6 +9,27 @@ import Foundation
 import UIKit
 
 
+func AddSitup() {
+    let db = SQLdb()
+    db.open("push-ups")
+    
+    let sql = """
+    CREATE TABLE IF NOT EXISTS situps (t1key INTEGER
+              PRIMARY KEY,data text,num double,timeEnter DATE);
+    CREATE TRIGGER IF NOT EXISTS insert_situps_timeEnter AFTER  INSERT ON situps
+      BEGIN
+        UPDATE situps SET timeEnter = DATETIME('NOW')  WHERE rowid = new.rowid;
+      END;
+    """
+    
+    db.sql(sql: sql)
+    db.sql(sql: "insert into situps (data,num) values ('situps',1.0);")
+    db.close()
+
+}
+
+
+
 func AddEntry(txt: String) {
     let db = SQLdb()
     db.open("push-ups")
