@@ -17,17 +17,7 @@ struct ContentView: View {
                 HStack {
                     VStack{
                         
-                        ScrollView {
-                            Text(txt0)
-                                .padding(.all,30)
-                                .padding([.top,.bottom],20)
-                                .background(Color.red)
-                                .foregroundColor(Color.black)
-                                .cornerRadius(5)
-                                .shadow(radius: 25)
-                                .lineLimit(nil)
-                                .font(Font.custom("Avenir-Black", size: 17))
-                        }
+                        Display(txt0: $txt0)
                         Spacer(minLength: 4)
                         PushUp(txt0: $txt0)
                         SitUp(txt0: $txt0)
@@ -115,3 +105,21 @@ struct KettleBell: View {
     }
 }
 
+
+struct Display: View {
+    @Binding var txt0: String
+    
+    var body: some View {
+        ScrollView {
+            Text(txt0)
+                .padding(.all,30)
+                .padding([.top,.bottom],20)
+                .background(Color.red)
+                .foregroundColor(Color.black)
+                .cornerRadius(5)
+                .shadow(radius: 25)
+                .lineLimit(nil)
+                .font(Font.custom("Avenir-Black", size: 17))
+        }
+    }
+}

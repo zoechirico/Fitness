@@ -80,7 +80,6 @@ func GetCount(table:String = "t0") -> Int64 {
     let r = db.resultNI(sql: "select t1key, data, num, timeEnter from \(table) where timeEnter > date('now','-17 hour');")
 
     for (_ , item) in r.enumerated() {
-        print("\(item.t1key),\t \(item.data), \(item.num),  timeEnter: \(item.timeEnter)")
         result+=1
     }
     
