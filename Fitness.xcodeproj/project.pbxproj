@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01E0D2F258EC3970063AE69 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E0D2E258EC3970063AE69 /* DetailView.swift */; };
 		B04C7198258D2C2B0077B785 /* FitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C7197258D2C2B0077B785 /* FitnessApp.swift */; };
 		B04C719A258D2C2B0077B785 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C7199258D2C2B0077B785 /* ContentView.swift */; };
 		B04C719C258D2C2B0077B785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B04C719B258D2C2B0077B785 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B01E0D2E258EC3970063AE69 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B04C7194258D2C2B0077B785 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04C7197258D2C2B0077B785 /* FitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessApp.swift; sourceTree = "<group>"; };
 		B04C7199258D2C2B0077B785 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				B050971A258D328B000EFD65 /* SQLdb */,
 				B04C7197258D2C2B0077B785 /* FitnessApp.swift */,
 				B04C7199258D2C2B0077B785 /* ContentView.swift */,
+				B01E0D2E258EC3970063AE69 /* DetailView.swift */,
 				B04C719B258D2C2B0077B785 /* Assets.xcassets */,
 				B04C71A0258D2C2B0077B785 /* Info.plist */,
 				B04C719D258D2C2B0077B785 /* Preview Content */,
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B050971C258D32B6000EFD65 /* SQLdb.swift in Sources */,
+				B01E0D2F258EC3970063AE69 /* DetailView.swift in Sources */,
 				B04C719A258D2C2B0077B785 /* ContentView.swift in Sources */,
 				B04C71D7258D2C530077B785 /* WidgetFitness.intentdefinition in Sources */,
 				B050973B258D3B84000EFD65 /* ModelSQLdb.swift in Sources */,

@@ -12,25 +12,8 @@ struct ContentView: View {
     @State var txt0: String = "Push Ups: \(GetCount(table: "t0"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
     
     var body: some View {
-        ZStack {
-            VStack {
-                HStack {
-                    VStack{
-                        
-                        Display(txt0: $txt0)
-                        Spacer(minLength: 4)
-                        PushUp(txt0: $txt0)
-                        SitUp(txt0: $txt0)
-                        KettleBell(txt0: $txt0)
-                        Spacer(minLength: 50)
-                    }
-                }
-            }
-        }
+        ZView(txt0: $txt0)
     }
-    
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -120,6 +103,36 @@ struct Display: View {
                 .shadow(radius: 25)
                 .lineLimit(nil)
                 .font(Font.custom("Avenir-Black", size: 17))
+        }
+    }
+}
+
+struct ZView: View {
+    @Binding var txt0: String
+    @State var showingMultipleViews = false
+    var body: some View {
+        ZStack {
+            VStack {
+                HStack {
+                    VStack{
+                        Button(action: {
+                            self.showingMultipleViews=true
+                        }) {
+                            Display(txt0: $txt0)
+                        }.fullScreenCover(isPresented: $showingMultipleViews) {
+                            DetailView(showModal: $showingMultipleViews)
+                        }
+                        
+                        
+                        
+                        Spacer(minLength: 4)
+                        PushUp(txt0: $txt0)
+                        SitUp(txt0: $txt0)
+                        KettleBell(txt0: $txt0)
+                        Spacer(minLength: 50)
+                    }
+                }
+            }
         }
     }
 }

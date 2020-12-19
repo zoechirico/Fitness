@@ -26,8 +26,6 @@ public struct SQLdbResultNI {
 }
 
 
-
-
 public class SQLdb {
     
     internal let SQLITE_STATIC = unsafeBitCast(0, to: sqlite3_destructor_type.self)
