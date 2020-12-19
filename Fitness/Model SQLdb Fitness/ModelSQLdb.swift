@@ -28,6 +28,25 @@ func AddSitup() {
 
 }
 
+func AddKettleBell() {
+    let db = SQLdb()
+    db.open("push-ups")
+    
+    let sql = """
+    CREATE TABLE IF NOT EXISTS KettleBell (t1key INTEGER
+              PRIMARY KEY,data text,num double,timeEnter DATE);
+    CREATE TRIGGER IF NOT EXISTS insert_KettleBell_timeEnter AFTER  INSERT ON KettleBell
+      BEGIN
+        UPDATE KettleBell SET timeEnter = DATETIME('NOW')  WHERE rowid = new.rowid;
+      END;
+    """
+    
+    db.sql(sql: sql)
+    db.sql(sql: "insert into KettleBell (data,num) values ('KettleBell',1.0);")
+    db.close()
+
+}
+
 
 
 func AddEntry(txt: String) {
@@ -45,7 +64,12 @@ func AddEntry(txt: String) {
     db.close()
 }
 
-func GetCount() -> Int64 {
+/*
+t0
+situps
+KettleBell
+ */
+func GetCount(table:String = "t0") -> Int64 {
     
     var result:Int64 = 0
     let db = SQLdb()
@@ -53,28 +77,7 @@ func GetCount() -> Int64 {
     db.create()
     
     
-    let r = db.count()
-    
-    
-    for (_ , item) in r.enumerated() {
-        print("\(item)")
-        result = item
-    }
-    
-    db.close()
-    
-    return result
-}
-
-func GetSitup() -> Int64 {
-    
-    var result:Int64 = 0
-    let db = SQLdb()
-    db.open("push-ups")
-    db.create()
-    
-    
-    let r = db.resultNI(sql: "select t1key, data, num, timeEnter from situps where timeEnter > date('now','-17 hour');")
+    let r = db.resultNI(sql: "select t1key, data, num, timeEnter from \(table) where timeEnter > date('now','-17 hour');")
 
     for (_ , item) in r.enumerated() {
         print("\(item.t1key),\t \(item.data), \(item.num),  timeEnter: \(item.timeEnter)")
@@ -82,7 +85,6 @@ func GetSitup() -> Int64 {
     }
     
     db.close()
-    
     
     return result
 }
