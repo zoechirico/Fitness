@@ -157,7 +157,7 @@ public class SQLdb {
         var result: [Int64] = []
         
         
-        if sqlite3_prepare_v2(db, "select count(*) as c from t0;", -1, &statement, nil) != SQLITE_OK {
+        if sqlite3_prepare_v2(db, "select count(*) as c from t0 where timeEnter > date('now','-17 hour');", -1, &statement, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db))
             print("error preparing select: \(errmsg)")
         }

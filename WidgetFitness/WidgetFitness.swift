@@ -11,11 +11,11 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(),txt: "Count: \(GetCount())", configuration: ConfigurationIntent())
+        SimpleEntry(date: Date(),txt: "Count: \(GetCount())",txt2: "", configuration: ConfigurationIntent())
     }
     
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(),txt: "Start", configuration: configuration)
+        let entry = SimpleEntry(date: Date(),txt: "Start",txt2: "", configuration: configuration)
         completion(entry)
     }
     
@@ -25,8 +25,8 @@ struct Provider: IntentTimelineProvider {
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate,txt: "Count: \(GetCount())", configuration: configuration)
+            let entryDate = Calendar.current.date(byAdding: .minute, value: hourOffset, to: currentDate)!
+            let entry = SimpleEntry(date: entryDate,txt: "Count: \(GetCount())",txt2: "", configuration: configuration)
             entries.append(entry)
         }
         
@@ -38,6 +38,7 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let txt: String
+    let txt2: String
     let configuration: ConfigurationIntent
 }
 
@@ -53,10 +54,33 @@ struct WidgetFitnessEntryView : View {
                     Color("C0")
                     
                     HStack {
+                        Spacer()
                         VStack {
                             Text(entry.date, style: .time)
+                                .padding(.all)
                             Text(entry.txt)
+                            ZStack {
+                                Color("C0")
+                                VStack{
+                                HStack {
+                                    Spacer()
+                                    Text("Goal 21")
+                                        .font(.title2)
+                                        .multilineTextAlignment(.center)
+                                        .padding([.top, .leading, .bottom], 1.0)
+                                        .foregroundColor(.yellow)
+                                        
+                                    Spacer()
+                                        
+                                }
+                                }
+                                .background(ContainerRelativeShape().fill(Color("Border")))
+                                
+                            }
+                            
+                            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                         }
+                        Spacer(minLength: 20)
                     }
                 }
             }
@@ -79,7 +103,7 @@ struct WidgetFitness: Widget {
 
 struct WidgetFitness_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetFitnessEntryView(entry: SimpleEntry(date: Date(),txt: "Start", configuration: ConfigurationIntent()))
+        WidgetFitnessEntryView(entry: SimpleEntry(date: Date(),txt: "Start",txt2: "", configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
