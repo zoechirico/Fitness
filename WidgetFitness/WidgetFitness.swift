@@ -62,17 +62,17 @@ struct WidgetFitnessEntryView : View {
                             ZStack {
                                 Color("C0")
                                 VStack{
-                                HStack {
-                                    Spacer()
-                                    Text("Goal 21")
-                                        .font(.title2)
-                                        .multilineTextAlignment(.center)
-                                        .padding([.top, .leading, .bottom], 1.0)
-                                        .foregroundColor(.yellow)
+                                    HStack {
+                                        Spacer()
+                                        Text("Goal 21")
+                                            .font(.title2)
+                                            .multilineTextAlignment(.center)
+                                            .padding([.top, .leading, .bottom], 1.0)
+                                            .foregroundColor(.yellow)
                                         
-                                    Spacer()
+                                        Spacer()
                                         
-                                }
+                                    }
                                 }
                                 .background(ContainerRelativeShape().fill(Color("Border")))
                                 
