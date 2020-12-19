@@ -65,3 +65,24 @@ func GetCount() -> Int64 {
     
     return result
 }
+
+func GetSitup() -> Int64 {
+    
+    var result:Int64 = 0
+    let db = SQLdb()
+    db.open("push-ups")
+    db.create()
+    
+    
+    let r = db.resultNI(sql: "select t1key, data, num, timeEnter from situps where timeEnter > date('now','-17 hour');")
+
+    for (_ , item) in r.enumerated() {
+        print("\(item.t1key),\t \(item.data), \(item.num),  timeEnter: \(item.timeEnter)")
+        result+=1
+    }
+    
+    db.close()
+    
+    
+    return result
+}

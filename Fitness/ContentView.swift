@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var txt0: String = "Push Ups: \(GetCount())"
-    @State var txt1: String = "Count: \(GetCount())"
-    
+    @State var txt0: String = "Push Ups: \(GetCount())\nSitup: \(GetSitup())"
     
     var body: some View {
         ZStack {
@@ -30,8 +28,8 @@ struct ContentView: View {
                         Spacer(minLength: 4)
                         Button(action: {
                             AddEntry(txt: "Push-up")
-                            txt0 = "Push Ups: \(GetCount())"
-
+                            txt0 = "Push Ups: \(GetCount())\nSitup: \(GetSitup())"
+                            
                         }) {
                             Text("Push Ups")
                                 .padding(.all,30)
@@ -46,8 +44,8 @@ struct ContentView: View {
                         
                         Button(action: {
                             AddSitup()
-                            txt1 = "Situp: \(GetCount())"
-
+                            txt0 = "Push Ups: \(GetCount())\nSitup: \(GetSitup())"
+                            
                         }) {
                             Text("Situp")
                                 .padding(.all,30)
