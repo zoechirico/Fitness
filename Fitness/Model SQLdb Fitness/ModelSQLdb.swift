@@ -21,13 +21,6 @@ func AddEntry(txt: String) {
     
     db.insert(data: txt, image: image, num: 17.8)
     
-    let r = db.result()
-    
-    
-    for (_ , item) in r.enumerated() {
-        print("\(item.t1key),\t \(item.data), \(item.num), \(item.timeEnter)")
-    }
-    
     db.close()
 }
 
