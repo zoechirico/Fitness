@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var txt0: String = "Push Ups: \(GetCount(table: "t0"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
+    @State var txt0: String = "Push Ups: \(GetCount(table: "PushUp"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
     
     var body: some View {
         ZView(txt0: $txt0)
@@ -24,66 +24,101 @@ struct ContentView_Previews: PreviewProvider {
 
 struct PushUp: View {
     @Binding var txt0: String
+    @State var num: Int = 1
     
     var body: some View {
-        Button(action: {
-            AddEntry(txt: "Push-up")
-            txt0 = "Push Ups: \(GetCount(table: "t0"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
-            
-        }) {
-            Text("Push Ups")
+        HStack {
+            Button(action: {
+                AddPushup(num: Double(num))
+                txt0 = "Push Ups: \(GetCount(table: "PushUp"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
+                
+            }) {
+                Text("Push Ups")
+                    .padding(.all,30)
+                    .padding([.top,.bottom],20)
+                    .background(Color.orange)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(55)
+                    .shadow(radius: 155)
+                    .font(Font.custom("Avenir-Black", size: 27))
+                
+            }
+            Stepper("\(num)", value: $num, in: 0...1300)
                 .padding(.all,30)
                 .padding([.top,.bottom],20)
                 .background(Color.orange)
                 .foregroundColor(Color.black)
                 .cornerRadius(55)
                 .shadow(radius: 155)
-                .font(Font.custom("Avenir-Black", size: 57))
+                .font(Font.custom("Avenir-Black", size: 27))
             
         }
+        
     }
 }
 
 struct SitUp: View {
     @Binding var txt0: String
+    @State var num: Int = 1
     
     var body: some View {
-        Button(action: {
-            AddSitup()
-            txt0 = "Push Ups: \(GetCount(table: "t0"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
-            
-        }) {
-            Text("Situp")
+        HStack {
+            Button(action: {
+                AddSitup(num: Double(num))
+                txt0 = "Push Ups: \(GetCount(table: "PushUp"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
+                
+            }) {
+                Text("Situp")
+                    .padding(.all,30)
+                    .padding([.top,.bottom],20)
+                    .background(Color.blue)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(55)
+                    .shadow(radius: 155)
+                    .font(Font.custom("Avenir-Black", size: 27))
+                
+            }
+            Stepper("\(num)", value: $num, in: 0...1300)
                 .padding(.all,30)
                 .padding([.top,.bottom],20)
                 .background(Color.blue)
                 .foregroundColor(Color.black)
                 .cornerRadius(55)
                 .shadow(radius: 155)
-                .font(Font.custom("Avenir-Black", size: 57))
-            
+                .font(Font.custom("Avenir-Black", size: 27))
         }
     }
 }
 
 struct KettleBell: View {
     @Binding var txt0: String
+    @State var num: Int = 1
     
     var body: some View {
-        Button(action: {
-            AddKettleBell()
-            txt0 = "Push Ups: \(GetCount(table: "t0"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
-            
-        }) {
-            Text("Kettle Bell")
+        HStack{
+            Button(action: {
+                AddKettleBell(num: Double(num))
+                txt0 = "Push Ups: \(GetCount(table: "PushUp"))\nSitup: \(GetCount(table: "situps"))\nKettle Bells \(GetCount(table: "KettleBell"))"
+                
+            }) {
+                Text("Kettle Bell")
+                    .padding(.all,30)
+                    .padding([.top,.bottom],20)
+                    .background(Color.green)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(55)
+                    .shadow(radius: 155)
+                    .font(Font.custom("Avenir-Black", size: 27))
+                
+            }
+            Stepper("\(num)", value: $num, in: 0...1300)
                 .padding(.all,30)
                 .padding([.top,.bottom],20)
                 .background(Color.green)
                 .foregroundColor(Color.black)
                 .cornerRadius(55)
                 .shadow(radius: 155)
-                .font(Font.custom("Avenir-Black", size: 57))
-            
+                .font(Font.custom("Avenir-Black", size: 27))
         }
     }
 }

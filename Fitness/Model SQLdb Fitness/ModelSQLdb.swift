@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 
-func AddSitup() {
+func AddSitup(num: Double = 1.0) {
     let db = SQLdb()
-    db.open("push-ups")
+    db.open("workout")
     
     let sql = """
     CREATE TABLE IF NOT EXISTS situps (t1key INTEGER
@@ -23,14 +23,14 @@ func AddSitup() {
     """
     
     db.sql(sql: sql)
-    db.sql(sql: "insert into situps (data,num) values ('situps',1.0);")
+    db.sql(sql: "insert into situps (data,num) values ('situps',\(num));")
     db.close()
 
 }
 
-func AddKettleBell() {
+func AddKettleBell(num: Double = 1.0) {
     let db = SQLdb()
-    db.open("push-ups")
+    db.open("workout")
     
     let sql = """
     CREATE TABLE IF NOT EXISTS KettleBell (t1key INTEGER
@@ -42,7 +42,26 @@ func AddKettleBell() {
     """
     
     db.sql(sql: sql)
-    db.sql(sql: "insert into KettleBell (data,num) values ('KettleBell',1.0);")
+    db.sql(sql: "insert into KettleBell (data,num) values ('KettleBell',\(num));")
+    db.close()
+
+}
+
+func AddPushup(num: Double = 1.0) {
+    let db = SQLdb()
+    db.open("workout")
+    
+    let sql = """
+    CREATE TABLE IF NOT EXISTS PushUp (t1key INTEGER
+              PRIMARY KEY,data text,num double,timeEnter DATE);
+    CREATE TRIGGER IF NOT EXISTS insert_PushUp_timeEnter AFTER  INSERT ON PushUp
+      BEGIN
+        UPDATE PushUp SET timeEnter = DATETIME('NOW')  WHERE rowid = new.rowid;
+      END;
+    """
+    
+    db.sql(sql: sql)
+    db.sql(sql: "insert into PushUp (data,num) values ('KettleBell',\(num));")
     db.close()
 
 }
@@ -69,11 +88,11 @@ t0
 situps
 KettleBell
  */
-func GetCount(table:String = "t0") -> Int64 {
+func GetCount(table:String = "t0",database: String = "workout") -> Int64 {
     
     var result:Int64 = 0
     let db = SQLdb()
-    db.open("push-ups")
+    db.open(database)
     db.create()
     
     

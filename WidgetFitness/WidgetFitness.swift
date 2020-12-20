@@ -11,7 +11,7 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(),txt: "Count: \(GetCount())",txt2: "", configuration: ConfigurationIntent())
+        SimpleEntry(date: Date(),txt: "Count: \(GetCount(table: "PushUp"))",txt2: "", configuration: ConfigurationIntent())
     }
     
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -26,7 +26,7 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate,txt: "Count: \(GetCount())",txt2: "", configuration: configuration)
+            let entry = SimpleEntry(date: entryDate,txt: "Count: \(GetCount(table: "PushUp"))",txt2: "", configuration: configuration)
             entries.append(entry)
         }
         
