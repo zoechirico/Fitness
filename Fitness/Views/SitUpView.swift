@@ -1,16 +1,20 @@
 //
-//  DetailView.swift
+//  SitupView.swift
 //  Fitness
 //
-//  Created by Mike Chirico on 12/19/20.
+//  Created by Mike Chirico on 12/20/20.
 //
 
 import SwiftUI
 
-struct DetailView: View {
+struct SitUpView: View {
+    @EnvironmentObject var settings: WorkoutDisplay
     @Binding var showModal:Bool
+
     var body: some View {
-        Text("Detailed View... stats go here")
+        Text(settings.display)
+        SitUp()
+
         
         Button(action: {
             self.showModal=false
@@ -25,8 +29,10 @@ struct DetailView: View {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
+
+
+struct SitupView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(showModal: .constant(true))
+        SitUpView(showModal: .constant(true))
     }
 }

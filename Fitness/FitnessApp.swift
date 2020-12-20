@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+
 @main
 struct FitnessApp: App {
+    var settings = WorkoutDisplay()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(settings)
         }
     }
 }

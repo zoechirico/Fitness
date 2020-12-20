@@ -44,12 +44,13 @@ public class SQLdb {
         if file != "test.sqlite" {
             self.file = file
         }
+        
         let documentsDirectory = FileManager().containerURL(forSecurityApplicationGroupIdentifier: "group.Fitness.Thingy")
         let fileURL = documentsDirectory?.appendingPathComponent(self.file ?? file)
         
-        //        let documents = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        //        let fileURL = documents.appendingPathComponent(self.file ?? file)
-        //
+//                let documents = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+//                let fileURL = documents.appendingPathComponent(self.file ?? file)
+        
         if sqlite3_open(fileURL?.path, &self.db) != SQLITE_OK {
             print("error opening database")
         }
@@ -259,6 +260,7 @@ public class SQLdb {
         if sqlite3_prepare_v2(db, sql, -1, &statement, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db))
             print("error preparing select: \(errmsg)")
+            return results
         }
         
         
