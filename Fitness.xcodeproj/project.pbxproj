@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B01E0D2F258EC3970063AE69 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E0D2E258EC3970063AE69 /* DetailView.swift */; };
+		B0437B9225900A9D00471E80 /* KettleBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0437B9125900A9D00471E80 /* KettleBellView.swift */; };
+		B0437B982590101B00471E80 /* ClearDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0437B972590101B00471E80 /* ClearDataView.swift */; };
 		B04C7198258D2C2B0077B785 /* FitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C7197258D2C2B0077B785 /* FitnessApp.swift */; };
 		B04C719A258D2C2B0077B785 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C7199258D2C2B0077B785 /* ContentView.swift */; };
 		B04C719C258D2C2B0077B785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B04C719B258D2C2B0077B785 /* Assets.xcassets */; };
@@ -29,6 +31,9 @@
 		B050973B258D3B84000EFD65 /* ModelSQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050973A258D3B84000EFD65 /* ModelSQLdb.swift */; };
 		B0509740258D4286000EFD65 /* SQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050971B258D32B6000EFD65 /* SQLdb.swift */; };
 		B0509745258D42DC000EFD65 /* ModelSQLdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050973A258D3B84000EFD65 /* ModelSQLdb.swift */; };
+		B074A65C258F916C008E335A /* PushUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074A65B258F916C008E335A /* PushUpView.swift */; };
+		B074A666258F9D76008E335A /* SitUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074A665258F9D76008E335A /* SitUpView.swift */; };
+		B074A674258FB8E7008E335A /* CPUWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074A673258FB8E7008E335A /* CPUWheel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		B01E0D2E258EC3970063AE69 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		B0437B9125900A9D00471E80 /* KettleBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KettleBellView.swift; sourceTree = "<group>"; };
+		B0437B972590101B00471E80 /* ClearDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDataView.swift; sourceTree = "<group>"; };
 		B04C7194258D2C2B0077B785 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04C7197258D2C2B0077B785 /* FitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessApp.swift; sourceTree = "<group>"; };
 		B04C7199258D2C2B0077B785 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +103,9 @@
 		B050973A258D3B84000EFD65 /* ModelSQLdb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLdb.swift; sourceTree = "<group>"; };
 		B0509753258D4BDD000EFD65 /* Fitness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fitness.entitlements; sourceTree = "<group>"; };
 		B0509758258D4C36000EFD65 /* WidgetFitnessExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetFitnessExtension.entitlements; sourceTree = "<group>"; };
+		B074A65B258F916C008E335A /* PushUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpView.swift; sourceTree = "<group>"; };
+		B074A665258F9D76008E335A /* SitUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpView.swift; sourceTree = "<group>"; };
+		B074A673258FB8E7008E335A /* CPUWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUWheel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,12 +169,12 @@
 		B04C7196258D2C2B0077B785 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				B074A673258FB8E7008E335A /* CPUWheel.swift */,
+				B074A65A258F913B008E335A /* Views */,
 				B0509753258D4BDD000EFD65 /* Fitness.entitlements */,
 				B0509739258D38E2000EFD65 /* Model SQLdb Fitness */,
 				B050971A258D328B000EFD65 /* SQLdb */,
 				B04C7197258D2C2B0077B785 /* FitnessApp.swift */,
-				B04C7199258D2C2B0077B785 /* ContentView.swift */,
-				B01E0D2E258EC3970063AE69 /* DetailView.swift */,
 				B04C719B258D2C2B0077B785 /* Assets.xcassets */,
 				B04C71A0258D2C2B0077B785 /* Info.plist */,
 				B04C719D258D2C2B0077B785 /* Preview Content */,
@@ -234,6 +244,19 @@
 				B04FE84B258E45B400B3C802 /* ModelSQLdbTests.swift */,
 			);
 			path = "Model SQLdb Fitness";
+			sourceTree = "<group>";
+		};
+		B074A65A258F913B008E335A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B04C7199258D2C2B0077B785 /* ContentView.swift */,
+				B01E0D2E258EC3970063AE69 /* DetailView.swift */,
+				B074A65B258F916C008E335A /* PushUpView.swift */,
+				B074A665258F9D76008E335A /* SitUpView.swift */,
+				B0437B9125900A9D00471E80 /* KettleBellView.swift */,
+				B0437B972590101B00471E80 /* ClearDataView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,9 +421,14 @@
 			files = (
 				B050971C258D32B6000EFD65 /* SQLdb.swift in Sources */,
 				B01E0D2F258EC3970063AE69 /* DetailView.swift in Sources */,
+				B074A666258F9D76008E335A /* SitUpView.swift in Sources */,
 				B04C719A258D2C2B0077B785 /* ContentView.swift in Sources */,
 				B04C71D7258D2C530077B785 /* WidgetFitness.intentdefinition in Sources */,
 				B050973B258D3B84000EFD65 /* ModelSQLdb.swift in Sources */,
+				B0437B982590101B00471E80 /* ClearDataView.swift in Sources */,
+				B074A674258FB8E7008E335A /* CPUWheel.swift in Sources */,
+				B074A65C258F916C008E335A /* PushUpView.swift in Sources */,
+				B0437B9225900A9D00471E80 /* KettleBellView.swift in Sources */,
 				B04C7198258D2C2B0077B785 /* FitnessApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

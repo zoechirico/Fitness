@@ -17,20 +17,20 @@ class ModelSQLdbTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testExample() throws {
+    func test_SitUp() throws {
         
         let db = SQLdb()
-        db.open("push-ups")
-        db.sql(sql: "drop TABLE IF EXISTS  situps;")
-        db.sql(sql: "drop TRIGGER IF EXISTS insert_situps_timeEnter;")
         
-        AddSitup()
+        let database = "test.sqlite"
         
-        let r = db.resultNI(sql: "select t1key, data, num, timeEnter from situps;")
-        XCTAssertTrue(r.count == 1)
-        for (_ , item) in r.enumerated() {
-            print("\(item.t1key),\t \(item.data), \(item.num),  timeEnter: \(item.timeEnter)")
-        }
+        db.open(database)
+        db.sql(sql: "drop TABLE IF EXISTS  SitUp;")
+        db.sql(sql: "drop TRIGGER IF EXISTS insert_SitUp_timeEnter;")
+        var result  = GetCount(table: "SitUp",database: database)
+        XCTAssertTrue(result == 0)
+        AddSitUp()
+        result  = GetCount(table: "SitUp",database: database)
+        XCTAssertTrue(result == 0)
         
         db.close()
     }
