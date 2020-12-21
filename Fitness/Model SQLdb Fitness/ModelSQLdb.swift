@@ -129,7 +129,7 @@ func GetCount(table:String = "t0",database: String = "workout.sqlite") -> Int64 
     let r = db.resultNI(sql: "select t1key, data, num, timeEnter from \(table) where timeEnter > date('now','-17 hour') order by timeEnter desc;")
 
     for (_ , item) in r.enumerated() {
-        print("\(item.t1key), \(item.timeEnter)")
+        print("\(item.t1key), \(item.num), \(item.timeEnter)")
         result+=1
     }
     
