@@ -26,7 +26,8 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate,txt: "Count: \(GetCount(table: "PushUp"))",txt2: "", configuration: configuration)
+            let display = "P:\(GetCount(table: "PushUp")) S:\(GetCount(table: "SitUp")) k:\(GetCount(table: "KettleBell"))"
+            let entry = SimpleEntry(date: entryDate,txt: display,txt2: "", configuration: configuration)
             entries.append(entry)
         }
         
