@@ -26,8 +26,9 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: hourOffset, to: currentDate)!
-            let display = "P:\(GetCount(table: "PushUp")) S:\(GetCount(table: "SitUp")) k:\(GetCount(table: "KettleBell"))"
-            let entry = SimpleEntry(date: entryDate,txt: display,txt2: "", configuration: configuration)
+            let display = "P:\(GetCount(table: "PushUp")) S:\(GetCount(table: "SitUp"))"
+            let display2 = "k:\(GetCount(table: "KettleBell"))"
+            let entry = SimpleEntry(date: entryDate,txt: display,txt2: display2, configuration: configuration)
             entries.append(entry)
         }
         
@@ -60,6 +61,7 @@ struct WidgetFitnessEntryView : View {
                             Text(entry.date, style: .time)
                                 .padding(.all)
                             Text(entry.txt)
+                            Text(entry.txt2)
                             ZStack {
                                 Color("C0")
                                 VStack{
