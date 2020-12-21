@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         
-        // CPUWheel().frame(height: 150)
+        //CPUWheel().frame(height: 150)
         
         
         Button(action: {
@@ -94,88 +94,3 @@ struct ContentView_Previews: PreviewProvider {
         
     }
 }
-
-struct PushUp: View {
-    @EnvironmentObject var settings: WorkoutDisplay
-    @State private var num: Int = 1
-    
-    var body: some View {
-        HStack {
-            Button(action: {
-                AddPushUp(num: Double(num))
-                settings.display = "Push Ups: \(GetCount(table: "PushUp"))\nSit Ups:  \(GetCount(table: "SitUp"))\nKettleBell:  \(GetCount(table: "KettleBell"))"
-                //txt0 = "Push Ups: \(GetCount(table: "PushUp"))"
-                
-                
-            }) {
-                Text("Push Ups")
-                    .padding(.all,30)
-                    .padding([.top,.bottom],20)
-                    .background(Color.orange)
-                    .foregroundColor(Color.black)
-                    .cornerRadius(55)
-                    .shadow(radius: 155)
-                    .font(Font.custom("Avenir-Black", size: 27))
-                
-            }
-            
-            
-        }
-        
-    }
-}
-
-struct SitUp: View {
-    @EnvironmentObject var settings: WorkoutDisplay
-    var body: some View {
-        HStack {
-            Button(action: {
-                AddSitUp()
-                settings.display="Push Ups: \(GetCount(table: "PushUp"))\nSit Ups:  \(GetCount(table: "SitUp"))\nKettleBell:  \(GetCount(table: "KettleBell"))"
-                
-            }) {
-                Text("SitUp")
-                    .padding(.all,30)
-                    .padding([.top,.bottom],20)
-                    .background(Color.blue)
-                    .foregroundColor(Color.yellow)
-                    .cornerRadius(55)
-                    .shadow(radius: 155)
-                    .font(Font.custom("Avenir-Black", size: 27))
-                
-            }
-            
-            
-        }
-        
-    }
-}
-
-
-struct KettleBell: View {
-    @EnvironmentObject var settings: WorkoutDisplay
-    
-    var body: some View {
-        HStack{
-            Button(action: {
-                AddKettleBell()
-                settings.display="Push Ups: \(GetCount(table: "PushUp"))\nSit Ups:  \(GetCount(table: "SitUp"))\nKettleBell:  \(GetCount(table: "KettleBell"))"
-                
-                
-            }) {
-                Text("Kettle Bell")
-                    .padding(.all,30)
-                    .padding([.top,.bottom],20)
-                    .background(Color.green)
-                    .foregroundColor(Color.black)
-                    .cornerRadius(55)
-                    .shadow(radius: 155)
-                    .font(Font.custom("Avenir-Black", size: 27))
-                
-            }
-            
-        }
-    }
-}
-
-

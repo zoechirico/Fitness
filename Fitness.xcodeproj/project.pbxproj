@@ -34,6 +34,7 @@
 		B074A65C258F916C008E335A /* PushUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074A65B258F916C008E335A /* PushUpView.swift */; };
 		B074A666258F9D76008E335A /* SitUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074A665258F9D76008E335A /* SitUpView.swift */; };
 		B074A674258FB8E7008E335A /* CPUWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074A673258FB8E7008E335A /* CPUWheel.swift */; };
+		B07ABDC32590B82A008240C8 /* UtilsForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07ABDC22590B82A008240C8 /* UtilsForView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		B074A65B258F916C008E335A /* PushUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpView.swift; sourceTree = "<group>"; };
 		B074A665258F9D76008E335A /* SitUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpView.swift; sourceTree = "<group>"; };
 		B074A673258FB8E7008E335A /* CPUWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUWheel.swift; sourceTree = "<group>"; };
+		B07ABDC22590B82A008240C8 /* UtilsForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsForView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 				B074A665258F9D76008E335A /* SitUpView.swift */,
 				B0437B9125900A9D00471E80 /* KettleBellView.swift */,
 				B0437B972590101B00471E80 /* ClearDataView.swift */,
+				B07ABDC22590B82A008240C8 /* UtilsForView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07ABDC32590B82A008240C8 /* UtilsForView.swift in Sources */,
 				B050971C258D32B6000EFD65 /* SQLdb.swift in Sources */,
 				B01E0D2F258EC3970063AE69 /* DetailView.swift in Sources */,
 				B074A666258F9D76008E335A /* SitUpView.swift in Sources */,

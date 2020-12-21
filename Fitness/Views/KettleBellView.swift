@@ -23,6 +23,7 @@ struct KettleBellView: View {
                 .foregroundColor(Color.yellow)
                 .cornerRadius(15)
                 .shadow(radius: 15)
+                .font(Font.custom("Avenir-Black", size: 27))
         }
     }
 }
