@@ -66,7 +66,7 @@ func AddPushUp(num: Double = 1.0) {
     """
     
     db.sql(sql: sql)
-    db.sql(sql: "insert into PushUp (data,num) values ('KettleBell',\(num));")
+    db.sql(sql: "insert into PushUp (data,num) values ('PushUp',\(num));")
     db.close()
 
 }
